@@ -1,6 +1,6 @@
 name: Do Tools Sync For Abldg
 
-# 共享同步逻辑位于公共(Public)仓库 .sacts/sync_helm.yaml(组合 action,已钉 commit SHA)
+# 共享同步逻辑位于公共(Public)仓库 abldgsync/actions/helm(组合 action,见下方 uses;当前引用 @main,建议钉成具体 commit SHA 以获得可复现构建)
 on:
   # schedule:
   #   - cron: '0 2 10 * *'  # 每月10号凌晨2点自动执行(已屏蔽,不再定时执行)
@@ -24,6 +24,6 @@ jobs:
     timeout-minutes: 30
     steps:
       - name: 同步 Helm 二进制
-        uses: abldgsync/.sacts/sync_helm@main
+        uses: abldgsync/actions/helm@main
         with:
           binvern: ${{ inputs.binvern }}
