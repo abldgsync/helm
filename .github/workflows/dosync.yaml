@@ -1,6 +1,6 @@
 name: Sync Helm Binaries
 
-# 共享同步逻辑位于公共(Public)仓库 abldgsync/actions/sync(单一组合 action,通过 with.tool 选择工具)
+# 共享同步逻辑位于公共(Public)仓库 abldgsync/.github/sync(单一组合 action,通过 with.tool 选择工具)
 #(当前引用 @main,建议钉成具体 commit SHA 以获得可复现构建)
 on:
   # schedule:
@@ -25,7 +25,7 @@ jobs:
     timeout-minutes: 30
     steps:
       - name: 同步 Helm 二进制
-        uses: abldgsync/actions/sync@main
+        uses: abldgsync/.github/sync@main
         with:
           tool: helm
           binvern: ${{ inputs.binvern }}

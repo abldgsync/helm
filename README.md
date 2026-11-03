@@ -4,7 +4,7 @@
 
 ## 工作原理
 
-同步流程由本仓库 `.github/workflows/dosync.yaml` 触发,实际同步逻辑实现于共享组合 Action `abldgsync/actions/sync`(通过 `with: tool: helm` 选择本工具,内部 `dosync.sh` 按 `CS=1~4` 阶段执行);本仓库工作流仅负责调用与传参。核心步骤如下:
+同步流程由本仓库 `.github/workflows/dosync.yaml` 触发,实际同步逻辑实现于共享组合 Action `abldgsync/.github/sync`(通过 `with: tool: helm` 选择本工具,内部 `dosync.sh` 按 `CS=1~4` 阶段执行);本仓库工作流仅负责调用与传参。核心步骤如下:
 
 1. **解析版本并生成下载清单**
    - 未指定版本时使用 GitHub API 的 `latest` 接口获取最新稳定版;指定版本时通过 `tags/<version>` 接口精确命中.
