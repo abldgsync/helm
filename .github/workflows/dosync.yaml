@@ -1,4 +1,4 @@
-name: Do Tools Sync For Abldg
+name: Sync Helm Binaries
 
 # 共享同步逻辑位于公共(Public)仓库 abldgsync/actions/helm(组合 action,见下方 uses;当前引用 @main,建议钉成具体 commit SHA 以获得可复现构建)
 on:
